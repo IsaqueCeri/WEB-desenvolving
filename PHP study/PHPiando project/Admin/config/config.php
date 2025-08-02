@@ -1,7 +1,6 @@
 <?php
-header('Content-Type: charset=utf-8')
+header('Content-Type: charset=utf-8');
 session_start();
 
-define("Title", "Painel Administrativo v1");
-
+define("TITLE", "Painel Administrativo v1");
 ?>
