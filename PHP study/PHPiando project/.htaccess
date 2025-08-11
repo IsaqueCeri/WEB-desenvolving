@@ -1,0 +1,16 @@
+
+DirectoryIndex index.php index.html index.htm
+
+# Desativar a navegação de subdiretórios do site
+Options -Indexes
+
+
+# Ativa o plugin de reescrita do php  (modrewrite)
+ RewriteEngine on
+
+## Entrega a pasta ou arquivo diretamente se existir no servidor
+RewriteCond %{RESQUEST_FILENAME} !-f
+RewriteCond %{RESQUEST_FILENAME} !-d
+
+# Redireciona tudo para index.php passando o parâmetro "pg"
+# RewriteRule ^(.*)$ index.php?pg=$1 [L]

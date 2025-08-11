@@ -24,14 +24,21 @@
   <body>
     <div class="screen-login">
       <section class="container">
+
+        <!--<?php //if (isset($_GET['error'])) { ?>
+        <div class="row"></div>
+          <?php //, $_GET['error']; ?>
+        </div>        
+        <?php //} ?> -->
+        
         <div class="row">
           <div class="col-md-6 offset-md-3">
             <div class="card">
-              <div class="screen-card-header">
+              <div class="s111creen-card-header">
                 <h3> <?= TITLE; ?> </h3>
               </div>
               <div class="card-body">
-                <form action="index.php" method="post">
+                <form id="form-login" action="controller/login2.php" method="post">
                   <div class="screen-input form-group">
                     <label for="email">Email</label>
                     <input
@@ -39,25 +46,35 @@
                       name="email"
                       id="email"
                       class="form-control"
+                      required
+                      autocomplete="email"
                     />
                   </div>
                   <div class="screen-input form-group">
                     <label for="senha">Senha</label>
                     <input
                       type="password"
-                      name="senha"
+                      name="password"
                       id="senha"
                       class="form-control"
+                      required
                     />
                   </div>
                   <div class="btn-screen form-group">
                     <button type="submit" class="btn btn-primary">
                       Entrar
                     </button>
-                    <a href="#">Recuperar senha</a>
-                  </div>
+                    <a id="recuperar-senha" href="#">Recuperar senha</a>
+                  </div> 
                 </form>
               </div>
+            </div>
+            <div id="div-error" class="row" style="display:none">
+                <div class="col-sm-12">
+                    <div id="error-message" class="alert alert-danger" style="text-align: center;">
+                        <!-- será preenchido pelo js -->
+                    </div>
+                </div>
             </div>
           </div>
         </div>
@@ -74,5 +91,6 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
+    <script src="js + css/login.js"></script> 
   </body>
 </html>
